@@ -1,8 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using System; 
 
-public class FighterStats : MonoBehaviour
+public class FighterStats : MonoBehaviour, IComparable
 {
     // Start is called before the first frame update
 private bool dead = true;
@@ -13,6 +15,8 @@ private bool dead = true;
     [SerializeField]
     private GameObject healthFill;
 
+    
+
     [SerializeField]
 
     private GameObject energyFill;
@@ -22,7 +26,7 @@ private bool dead = true;
     public float energy;
     public float attack;
     public float defense;
-    public float range;
+    public float special;
     public float speed;
     public float experience;
 
@@ -42,7 +46,9 @@ private bool dead = true;
     private float xNewHealthScale;
     private float xNewEnergyScale;
 
-    private void Start() {
+    private GameObject GameController;
+
+    void Awake() {
         healthTransform=healthFill.GetComponent<RectTransform>();
         healthScale = healthFill.transform.localScale;
 
@@ -51,27 +57,56 @@ private bool dead = true;
 
         startHealth=health;
         startEnergy=energy;
+
+        GameController = GameObject.Find("GameControllerObj");
     }
     public void ReceiveDamage(float damage){
         health = health - damage;
         animator.Play("hurt");
-
+         Debug.Log("Damage received:"+damage);
         if(health<=0){
             dead = true;
             gameObject.tag="Dead";
             Destroy(healthFill);
             Destroy(gameObject);
 
-        }else{
+        }else if(damage>0){
+            
             xNewHealthScale= healthScale.x * (health/startHealth);
+           
             healthFill.transform.localScale=new Vector2(xNewHealthScale, healthScale.y);
 
 
         }
+        GameController.GetComponent<TurnBasedController>().damageText.gameObject.SetActive(true);
+        GameController.GetComponent<TurnBasedController>().damageText.text=damage.ToString();
+        Invoke("continueGame",2);
     }
     public void updateEnergyFill(float cost){
-        energy=energy-cost;
-        xNewEnergyScale=energyScale.x*(energy/startEnergy);
-        energyFill.transform.localScale=new Vector2(xNewEnergyScale,energyScale.y);
+        if(cost>1){
+            energy=energy-cost;
+            xNewEnergyScale=energyScale.x*(energy/startEnergy);
+            energyFill.transform.localScale=new Vector2(xNewEnergyScale,energyScale.y);
+    
+        }
     }
+    void continueGame(){
+        GameObject.Find("GameControllerObj").GetComponent<TurnBasedController>().NextTurn();
+    }
+
+    public bool GetDead(){
+        return dead;
+    }
+
+    public void CalculateNextTurn(int currentTurn){
+        nextActTurn = currentTurn + Mathf.CeilToInt(100f/speed);
+    }
+
+    public int CompareTo(object otherStat){
+        int nex= nextActTurn.CompareTo(((FighterStats)otherStat).nextActTurn);
+        return nex;
+        
+    }
+
+    
 }
