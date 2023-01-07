@@ -25,8 +25,7 @@ public class PlayerHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(transform.position.y);
-        if(transform.position.y<-2){
+        if(transform.position.y<-8){
             health=0;
             LoadScene("Lost");
         }
