@@ -21,19 +21,28 @@ public class FighterAction : MonoBehaviour
     private GameObject meleeAttack;
     private GameObject specialAttack;
     // Start is called before the first frame update
+     void Awake()
+    {
+        hero = GameObject.FindGameObjectWithTag("Hero");
+        enemy = GameObject.FindGameObjectWithTag("Enemy");
+    }
+
+
     public void SelectAttack(string btn)
     {
         GameObject victim = tag == "Hero"? enemy: hero;
         
+
+        
         switch (btn) {
              
         case "melee":
-            meleeAttack.GetComponent<AttackScript>().Attack(victim);
+            meleePrefab.GetComponent<AttackScript>().Attack(victim);
             Debug.Log("Melee");
             break;
  
         case "special":
-            specialAttack.GetComponent<AttackScript>().Attack(victim);
+            rangePrefab.GetComponent<AttackScript>().Attack(victim);
             Debug.Log("Special");
             break;
  

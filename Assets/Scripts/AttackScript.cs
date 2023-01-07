@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+using UnityEngine.UI;
+
 public class AttackScript : MonoBehaviour
 {
     // Start is called before the first frame update
@@ -13,7 +15,7 @@ public class AttackScript : MonoBehaviour
 
     [SerializeField]
     private bool specialAttack;
-    private float specialCost;
+    public float specialCost;
 
     [SerializeField]
     private float minAttackMultiplier;
@@ -27,34 +29,34 @@ public class AttackScript : MonoBehaviour
     private FighterStats targetStats;
     
     private float damage=0.0f;
-    private float xSpecialNewScale;
-    private Vector2 specialScale;
 
 
-    void Start()
-    {
-        specialScale=GameObject.Find("BikerEnergyFill").GetComponent<RectTransform>().localScale;
-    }
 
     // Update is called once per frame
     public void Attack(GameObject victim)
     {
         attackerStats=owner.GetComponent<FighterStats>();
         targetStats=victim.GetComponent<FighterStats>();
-
+        
+        
         if(attackerStats.energy >= specialCost){
             float multiplier = Random.Range(minAttackMultiplier, maxAttackMultiplier);
-            attackerStats.updateEnergyFill(specialCost);
-
+            
             damage=multiplier*attackerStats.attack;
             if(specialAttack){
-                damage=multiplier*attackerStats.energy;
-                attackerStats.energy -= specialCost;
+                damage=multiplier*attackerStats.special;  
             }
-            float defenseMultiplier = Random.RandomRange(minDefenseMultiplier, maxDefenseMultiplier);
+            float defenseMultiplier = Random.Range(minDefenseMultiplier, maxDefenseMultiplier);
             damage = Mathf.Max(0,damage-(defenseMultiplier*targetStats.defense));
             owner.GetComponent<Animator>().Play(animationName);
-            targetStats.ReceiveDamage(damage);
+            targetStats.ReceiveDamage(Mathf.CeilToInt(damage));
+            attackerStats.updateEnergyFill(specialCost);
+        }else{
+            Invoke("skipTurnContinueGame",3);
         }
+        
+    }
+     void skipTurnContinueGame(){
+        GameObject.Find("GameControllerObj").GetComponent<TurnBasedController>().NextTurn();
     }
 }
