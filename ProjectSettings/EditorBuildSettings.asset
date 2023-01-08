@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Won.unity
     guid: 8c24ab503b5049f448b2430bbdfd337b
+  - enabled: 1
+    path: Assets/Scenes/TurnBased.unity
+    guid: 9f2662f32e422dc43871c06930c05c87
   m_configObjects: {}

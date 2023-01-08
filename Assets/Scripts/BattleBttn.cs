@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class BattleBttn : MonoBehaviour
 {
@@ -30,8 +31,11 @@ public class BattleBttn : MonoBehaviour
             Hero.GetComponent<FighterAction>().SelectAttack("special");
 
         }else if(btn.CompareTo("RunBttn")== 0){
-            Hero.GetComponent<FighterAction>().SelectAttack("run");
+            SceneManager.UnloadSceneAsync("TurnBased");
+            Debug.Log("Battle Fled");
+            //Hero.GetComponent<FighterAction>().SelectAttack("run");
         }else{
+            
             Debug.Log("No sirvió");
         }
     }

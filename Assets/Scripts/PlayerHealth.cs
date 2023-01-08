@@ -37,8 +37,10 @@ public class PlayerHealth : MonoBehaviour
             _animator.SetTrigger("died");
 
         }else{
-            Debug.Log("Player health: "+health);
-            _animator.SetTrigger("hurt");
+            GameObject.Find("BattleControllerObj").GetComponent<BattleController>().TriggerBattle();
+            //Time.timeScale = 0f;
+            //Debug.Log("Player health: "+health);
+           // _animator.SetTrigger("hurt");
         }
         rt.sizeDelta = new Vector2(16*health, 16);
 	
