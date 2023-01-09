@@ -41,50 +41,58 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-        float horizontalInput=Input.GetAxisRaw("Horizontal");
-        _movement=new Vector2(horizontalInput,0f);
+        if(!BattleController.inBattle){
+            float horizontalInput=Input.GetAxisRaw("Horizontal");
+            _movement=new Vector2(horizontalInput,0f);
 
 
 
-        if(horizontalInput<0f && _facingRight==true){
-            Flip();
-        }else if(horizontalInput>0f && _facingRight==false){
-            Flip();
-        }
+            if(horizontalInput<0f && _facingRight==true){
+                Flip();
+            }else if(horizontalInput>0f && _facingRight==false){
+                Flip();
+            }
 
-        _isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
+            _isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
 
 
-        if(Input.GetButtonDown("Jump")&& _isGrounded==true){
-            _rigibody.AddForce(Vector2.up*jumpforce, ForceMode2D.Impulse);
-        }
-        
+            if(Input.GetButtonDown("Jump")&& _isGrounded==true){
+                _rigibody.AddForce(Vector2.up*jumpforce, ForceMode2D.Impulse);
+            }
+            
 
-        if(Input.GetButtonDown("Fire1") && _isGrounded == true && _isAttacking==false){
-            _movement = Vector2.zero;
-            _rigibody.velocity = Vector2.zero;
-            _animator.SetTrigger("attack"); 
+            if(Input.GetButtonDown("Fire1") && _isGrounded == true && _isAttacking==false){
+                _movement = Vector2.zero;
+                _rigibody.velocity = Vector2.zero;
+                _animator.SetTrigger("attack"); 
+            }
         }
 
     }
      void FixedUpdate() {
-        if(_isAttacking==false){
-            float horizontalVelocity=_movement.normalized.x*speed;
-            _rigibody.velocity=new Vector2(horizontalVelocity,_rigibody.velocity.y);
+        if(!BattleController.inBattle){
+            _rigibody.constraints = ~RigidbodyConstraints2D.FreezePosition;
+            if(_isAttacking==false){
+                float horizontalVelocity=_movement.normalized.x*speed;
+                _rigibody.velocity=new Vector2(horizontalVelocity,_rigibody.velocity.y);
+            }
+        }else{
+            _rigibody.constraints = RigidbodyConstraints2D.FreezePosition;
         }
         
     
     }
      void LateUpdate() {
-        _animator.SetBool("walking", _movement!= Vector2.zero);  
-        _animator.SetBool("jumped", !_isGrounded);  
-        _animator.SetFloat("verticalvelocity", _rigibody.velocity.y);  
-        if(_animator.GetCurrentAnimatorStateInfo(0).IsTag("att1")){
-            _isAttacking=true;
-        
-        }else{
-            _isAttacking=false;
+        if(!BattleController.inBattle){
+            _animator.SetBool("walking", _movement!= Vector2.zero);  
+            _animator.SetBool("jumped", !_isGrounded);  
+            _animator.SetFloat("verticalvelocity", _rigibody.velocity.y);  
+            if(_animator.GetCurrentAnimatorStateInfo(0).IsTag("att1")){
+                _isAttacking=true;
+            
+            }else{
+                _isAttacking=false;
+            }
         }
     }
 

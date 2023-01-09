@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class FighterAction : MonoBehaviour
 {
@@ -15,7 +16,7 @@ public class FighterAction : MonoBehaviour
     private GameObject rangePrefab;
 
     [SerializeField]
-    private GameObject Icon;
+    public Sprite Icon;
 
     private GameObject currentAttack;
     private GameObject meleeAttack;
@@ -24,14 +25,26 @@ public class FighterAction : MonoBehaviour
      void Awake()
     {
         hero = GameObject.FindGameObjectWithTag("Hero");
-        enemy = GameObject.FindGameObjectWithTag("Enemy");
+        enemy = GameObject.FindGameObjectWithTag("EnemyBattle");
     }
 
 
-    public void SelectAttack(string btn)
+    public void SelectAttack(string btn, string enemySelected)
     {
-        GameObject victim = tag == "Hero"? enemy: hero;
         
+
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("EnemyBattle");
+        foreach (GameObject ienemy in enemies)
+        {
+            if(enemySelected.CompareTo(ienemy.transform.parent.gameObject.name)==0){
+                enemy=ienemy;
+                break;
+            }
+        }
+        Debug.Log(enemy.transform.parent.gameObject.name);
+
+        GameObject victim = tag == "Hero"? enemy: hero;
+
 
         
         switch (btn) {

@@ -1237,6 +1237,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b473ff60f38ed67429a10a97c2b5146b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  infoPrefab: {fileID: 2480262470944626863, guid: 8289af233b9c1874583161b42762ed35, type: 3}
+  enemyPrefab1: {fileID: 1300611151085103345, guid: a46e9a83143f2ac45902d90cc6d39fe8, type: 3}
+  enemyPrefab2: {fileID: 0}
+  enemyPrefab3: {fileID: 0}
 --- !u!1 &1215202425
 GameObject:
   m_ObjectHideFlags: 0
@@ -8387,6 +8391,62 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1432340786}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1631254360
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1631254362}
+  - component: {fileID: 1631254361}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1631254361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1631254360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 950d8483c1f30d74eb1970210fd9579a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 0}
+  healthFill: {fileID: 0}
+  fighterName: 
+  energyFill: {fileID: 0}
+  health: 0
+  energy: 0
+  attack: 0
+  defense: 0
+  special: 0
+  speed: 0
+  experience: 0
+  nextActTurn: 0
+--- !u!4 &1631254362
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1631254360}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.5058515, y: -0.22714718, z: -0.0070512197}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1637240160
 GameObject:

@@ -21,6 +21,8 @@ public class EnemyPatrolling : MonoBehaviour
     private Vector2 _movement;
 
     private bool _isAttacking;
+
+	private bool _wasPaused;
     // Start is called before the first frame update
     void Awake(){
         _animator = GetComponent<Animator>();
@@ -33,10 +35,11 @@ public class EnemyPatrolling : MonoBehaviour
     }
 
     // Update is called once per frame
+	/*
     void Update()
     {
-        
-    }
+        if
+    }*/
     private void UpdateTarget()
 	{
 		// If first time, create target in the left
@@ -65,18 +68,21 @@ public class EnemyPatrolling : MonoBehaviour
 		// Coroutine to move the enemy
 		while(Vector2.Distance(transform.position, _target.transform.position) > 0.05f) {
 			// let's move to the target
-            if(_isAttacking==true){
-                break;
+			//if(!BattleController.inBattle){
+				if(_isAttacking==true){
+                	break;
 	
-            }
-            _animator.SetBool("Walking",true);
-			Vector2 direction = _target.transform.position - transform.position;
-			float xDirection = direction.x;
+				}
+				_animator.SetBool("Walking",true);
+				Vector2 direction = _target.transform.position - transform.position;
+				float xDirection = direction.x;
 
-			transform.Translate(direction.normalized * speed * Time.deltaTime);
+				transform.Translate(direction.normalized * speed * Time.deltaTime);
 
-			// IMPORTANT
-			yield return null;
+				// IMPORTANT
+				yield return null;
+			//}
+           
 		}
 
 
@@ -99,8 +105,10 @@ public class EnemyPatrolling : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
 	{
-		if (_isAttacking == false && collision.CompareTag("Player")) {
+		if (_isAttacking == false && collision.CompareTag("Player") && !BattleController.inBattle) {
 			StartCoroutine(AimAndShoot());
+		}else if(BattleController.inBattle){
+			StopCoroutine(AimAndShoot());
 		}
 	}
     private void Flip()

@@ -9,6 +9,8 @@ public class BattleBttn : MonoBehaviour
     // Start is called before the first frame update
     [SerializeField]
     private bool physical;
+    private bool attackselected=false;
+    private bool meleeSelected;
 
     private GameObject Hero;
     void Start()
@@ -17,26 +19,103 @@ public class BattleBttn : MonoBehaviour
         
         string temp = gameObject.name;
         Debug.Log(temp);
-        gameObject.GetComponent<Button>().onClick.AddListener(()=> AttachCallback(temp));
+        gameObject.GetComponent<Button>().onClick.AddListener(()=> AttachCallback(temp, gameObject));
         Hero = GameObject.FindGameObjectWithTag("Hero");
     }
 
+    void turnIndicators(bool indicatorState){
+
+
+    }
+
     // Update is called once per frame
-    private void AttachCallback(string btn){
-        
-        if(btn.CompareTo("MeleeBttn")== 0){
-            Hero.GetComponent<FighterAction>().SelectAttack("melee");
+    private void AttachCallback(string btn, GameObject btnPressed){
+        if(attackselected){
+             if(btn.CompareTo("MeleeBttn")== 0 || btn.CompareTo("SpecialBttn")== 0){
+                attackselected=false;
+                //hideindicators
 
-        }else if(btn.CompareTo("SpecialBttn")== 0){
-            Hero.GetComponent<FighterAction>().SelectAttack("special");
+            }
+            else if(btn.CompareTo("Indicator")== 0){
+                switch(btnPressed.transform.parent.parent.gameObject.name){
+                    case "EnemyInfo1":
+                        if(meleeSelected){
+                            Hero.GetComponent<FighterAction>().SelectAttack("melee","Position1");
+                        }else{
+                            Hero.GetComponent<FighterAction>().SelectAttack("special","Position1");
+                        }
+                        break;
+                        case "EnemyInfo2":
+                        if(meleeSelected){
+                            Hero.GetComponent<FighterAction>().SelectAttack("melee","Position2");
+                        }else{
+                            Hero.GetComponent<FighterAction>().SelectAttack("special","Position2");
+                        }
+                        break;
+                        case "EnemyInfo3":
+                        if(meleeSelected){
+                            Hero.GetComponent<FighterAction>().SelectAttack("melee","Position3");
+                        }else{
+                            Hero.GetComponent<FighterAction>().SelectAttack("special","Position3");
+                        }
+                        break;
+                }
 
-        }else if(btn.CompareTo("RunBttn")== 0){
-            SceneManager.UnloadSceneAsync("TurnBased");
-            Debug.Log("Battle Fled");
-            //Hero.GetComponent<FighterAction>().SelectAttack("run");
+            }
+            else if(btn.CompareTo("RunBttn")== 0){
+                BattleController.inBattle=false;
+                SceneManager.UnloadSceneAsync("TurnBased");
+                Debug.Log("Battle Fled");
+            }else{
+                
+                Debug.Log("No sirvió");
+            }
         }else{
-            
-            Debug.Log("No sirvió");
+            if(btn.CompareTo("MeleeBttn")== 0){
+                meleeSelected=true;
+                attackselected=true;
+                //showindicators
+
+            }else if(btn.CompareTo("SpecialBttn")== 0){
+                meleeSelected=false;
+                attackselected=true;
+                //showindicators
+            }
+            else if(btn.CompareTo("Indicator")== 0){
+                switch(btnPressed.transform.parent.parent.gameObject.name){
+                    case "EnemyInfo1":
+                        if(meleeSelected){
+                            Hero.GetComponent<FighterAction>().SelectAttack("melee","Position1");
+                        }else{
+                            Hero.GetComponent<FighterAction>().SelectAttack("special","Position1");
+                        }
+                        break;
+                        case "EnemyInfo2":
+                        if(meleeSelected){
+                            Hero.GetComponent<FighterAction>().SelectAttack("melee","Position2");
+                        }else{
+                            Hero.GetComponent<FighterAction>().SelectAttack("special","Position2");
+                        }
+                        break;
+                        case "EnemyInfo3":
+                        if(meleeSelected){
+                            Hero.GetComponent<FighterAction>().SelectAttack("melee","Position3");
+                        }else{
+                            Hero.GetComponent<FighterAction>().SelectAttack("special","Position3");
+                        }
+                        break;
+                }
+
+            }
+            else if(btn.CompareTo("RunBttn")== 0){
+                BattleController.inBattle=false;
+                SceneManager.UnloadSceneAsync("TurnBased");
+                Debug.Log("Battle Fled");
+                //Hero.GetComponent<FighterAction>().SelectAttack("run");
+            }else{
+                
+                Debug.Log("No sirvió");
+            }
         }
     }
 }

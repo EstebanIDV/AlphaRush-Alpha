@@ -25,7 +25,7 @@ public class TurnBasedController : MonoBehaviour
 
 
 
-        GameObject enemy = GameObject.FindGameObjectWithTag("Enemy");
+        GameObject enemy = GameObject.FindGameObjectWithTag("EnemyBattle");
         FighterStats currentEnemyStats = enemy.GetComponent<FighterStats>();
         currentEnemyStats.CalculateNextTurn(0);
         fighterStats.Add(currentEnemyStats);
@@ -58,7 +58,7 @@ public class TurnBasedController : MonoBehaviour
                 Debug.Log("Enemy Attack!!");
                 this.battleMenu.SetActive(false);
                 string attackType= Random.Range(0,2)==1?"melee":"special";
-                currentUnit.GetComponent<FighterAction>().SelectAttack(attackType);
+                currentUnit.GetComponent<FighterAction>().SelectAttack(attackType, currentUnit.transform.parent.gameObject.name);
             }
         }else{
             NextTurn();

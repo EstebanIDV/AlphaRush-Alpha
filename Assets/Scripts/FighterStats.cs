@@ -13,15 +13,18 @@ private bool dead = true;
     private Animator animator;
 
     [SerializeField]
-    private GameObject healthFill;
+    public GameObject healthFill;
 
-    
+    public string fighterName;
 
     [SerializeField]
 
-    private GameObject energyFill;
+    public GameObject energyFill;
+    
 
     [Header("Stats")]
+
+
     public float health;
     public float energy;
     public float attack;
