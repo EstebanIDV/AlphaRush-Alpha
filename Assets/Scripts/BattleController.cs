@@ -1,9 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class BattlerController : MonoBehaviour
+
+public class BattleController : MonoBehaviour
 {
+
+    public static bool inBattle;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,5 +18,10 @@ public class BattlerController : MonoBehaviour
     void Update()
     {
         
+    }
+    public void TriggerBattle(){
+        inBattle=true;
+        SceneManager.LoadScene("TurnBased", LoadSceneMode.Additive);
+
     }
 }

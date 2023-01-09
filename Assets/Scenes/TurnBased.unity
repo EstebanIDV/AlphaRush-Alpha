@@ -133,7 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 17178327}
   - component: {fileID: 17178328}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: IndustrialTile_11 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -216,7 +216,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 32290989}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Portrait
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -254,7 +254,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 102033554}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: EnergyBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -294,7 +294,7 @@ GameObject:
   - component: {fileID: 102756216}
   - component: {fileID: 102756218}
   - component: {fileID: 102756217}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Image (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -370,7 +370,7 @@ GameObject:
   - component: {fileID: 133875481}
   - component: {fileID: 133875483}
   - component: {fileID: 133875482}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: EmptyHealth
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -447,7 +447,7 @@ GameObject:
   - component: {fileID: 193586771}
   - component: {fileID: 193586770}
   - component: {fileID: 193586769}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: HeadsUpCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -553,7 +553,7 @@ GameObject:
   - component: {fileID: 198596378}
   - component: {fileID: 198596379}
   - component: {fileID: 198596380}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Biker
   m_TagString: Hero
   m_Icon: {fileID: 0}
@@ -619,9 +619,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 198596375}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.69069004, y: 0.4553482, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.69073486, y: 0.45533752, z: 0}
+  m_LocalScale: {x: 1.0000001, y: 1.0000001, z: 1.0000001}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 557091360}
@@ -698,7 +698,7 @@ GameObject:
   - component: {fileID: 371970043}
   - component: {fileID: 371970045}
   - component: {fileID: 371970044}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -833,7 +833,7 @@ GameObject:
   - component: {fileID: 410694145}
   - component: {fileID: 410694147}
   - component: {fileID: 410694146}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: EmptyHealth
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -908,7 +908,7 @@ GameObject:
   m_Component:
   - component: {fileID: 430293027}
   - component: {fileID: 430293026}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GameControllerObj
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -936,9 +936,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 430293025}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.41776818, y: 0.1125733, z: -0.061913896}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.4177246, y: 0.11256409, z: -0.0619139}
+  m_LocalScale: {x: 1.0000001, y: 1.0000001, z: 1.0000001}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -953,7 +953,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 452242655}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: EnemyInfo1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -997,7 +997,7 @@ GameObject:
   - component: {fileID: 468843457}
   - component: {fileID: 468843456}
   - component: {fileID: 468843459}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: SpecialBttn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1131,13 +1131,13 @@ GameObject:
   - component: {fileID: 478831190}
   - component: {fileID: 478831189}
   - component: {fileID: 478831188}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!81 &478831188
 AudioListener:
   m_ObjectHideFlags: 0
@@ -1177,7 +1177,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 64
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -1279,6 +1279,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PrefabMeleeBiker
       objectReference: {fileID: 0}
+    - target: {fileID: 8798648757202395711, guid: 79e8a750588a3c74a8a64daa7fd9070b, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 79e8a750588a3c74a8a64daa7fd9070b, type: 3}
 --- !u!1 &557091359 stripped
@@ -1300,7 +1304,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 579175443}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: BikerInfo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1340,7 +1344,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 706158738}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1354,9 +1358,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 706158737}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.06744062, y: 0.48275387, z: -78.641014}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.06744385, y: 0.4827423, z: -78.641014}
+  m_LocalScale: {x: 1.0000001, y: 1.0000001, z: 1.0000001}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 953257743}
@@ -1375,7 +1379,7 @@ GameObject:
   - component: {fileID: 720135970}
   - component: {fileID: 720135972}
   - component: {fileID: 720135971}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: BikerEnergyFill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1451,7 +1455,7 @@ GameObject:
   - component: {fileID: 814481122}
   - component: {fileID: 814481124}
   - component: {fileID: 814481123}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1586,7 +1590,7 @@ GameObject:
   - component: {fileID: 846836020}
   - component: {fileID: 846836022}
   - component: {fileID: 846836021}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1662,7 +1666,7 @@ GameObject:
   - component: {fileID: 860361733}
   - component: {fileID: 860361735}
   - component: {fileID: 860361734}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: ActionMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1738,7 +1742,7 @@ GameObject:
   m_Component:
   - component: {fileID: 882204979}
   - component: {fileID: 882204980}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1825,7 +1829,7 @@ GameObject:
   - component: {fileID: 900021743}
   - component: {fileID: 900021745}
   - component: {fileID: 900021746}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: MeleeBttn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2025,7 +2029,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 953257743}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2060,7 +2064,7 @@ GameObject:
   - component: {fileID: 1267885371}
   - component: {fileID: 1267885373}
   - component: {fileID: 1267885372}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: EnergyFill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2136,7 +2140,7 @@ GameObject:
   - component: {fileID: 1289377660}
   - component: {fileID: 1289377662}
   - component: {fileID: 1289377661}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2270,7 +2274,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1293611821}
   - component: {fileID: 1293611822}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: IndustrialTile_11 1 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2353,7 +2357,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1351258867}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: HealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2393,7 +2397,7 @@ GameObject:
   - component: {fileID: 1365643875}
   - component: {fileID: 1365643877}
   - component: {fileID: 1365643876}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: HealthFill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2467,7 +2471,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1400906761}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: HealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2507,7 +2511,7 @@ GameObject:
   - component: {fileID: 1440983911}
   - component: {fileID: 1440983913}
   - component: {fileID: 1440983912}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: EmptyEnergy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2588,7 +2592,7 @@ GameObject:
   - component: {fileID: 1603912293}
   - component: {fileID: 1603912295}
   - component: {fileID: 1603912294}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: HealthFill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2662,7 +2666,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1611363089}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Portrait
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2702,7 +2706,7 @@ GameObject:
   - component: {fileID: 1626887124}
   - component: {fileID: 1626887126}
   - component: {fileID: 1626887125}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Name
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2837,6 +2841,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PrefabSpecialBiker
       objectReference: {fileID: 0}
+    - target: {fileID: 1523066240799330044, guid: 748318999c86dff48b513fd6fd6e909e, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 1523066240799330046, guid: 748318999c86dff48b513fd6fd6e909e, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -2916,7 +2924,7 @@ GameObject:
   - component: {fileID: 1676310610}
   - component: {fileID: 1676310612}
   - component: {fileID: 1676310611}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Image (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2992,7 +3000,7 @@ GameObject:
   - component: {fileID: 1731317776}
   - component: {fileID: 1731317778}
   - component: {fileID: 1731317777}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: DamageIndicator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3127,7 +3135,7 @@ GameObject:
   - component: {fileID: 1760856927}
   - component: {fileID: 1760856929}
   - component: {fileID: 1760856928}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3205,7 +3213,7 @@ GameObject:
   - component: {fileID: 1786709805}
   - component: {fileID: 1786709807}
   - component: {fileID: 1786709808}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: RunBttn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3338,7 +3346,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1820277562}
   - component: {fileID: 1820277563}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3423,7 +3431,7 @@ GameObject:
   - component: {fileID: 1850166579}
   - component: {fileID: 1850166581}
   - component: {fileID: 1850166580}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: EmptyEnergy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3497,7 +3505,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1858847034}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: EnergyBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3542,7 +3550,7 @@ GameObject:
   - component: {fileID: 1928400522}
   - component: {fileID: 1928400524}
   - component: {fileID: 1928400523}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Name
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3675,7 +3683,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1937234448}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3708,7 +3716,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1960997592}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Bttns
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3751,7 +3759,7 @@ GameObject:
   - component: {fileID: 1983335680}
   - component: {fileID: 1983335682}
   - component: {fileID: 1983335681}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -3817,9 +3825,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1983335677}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.82415, y: 0.46234822, z: 0}
-  m_LocalScale: {x: -1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.8241577, y: 0.46232605, z: 0}
+  m_LocalScale: {x: -1.0000001, y: 1.0000001, z: 1.0000001}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2017264059}
@@ -3968,6 +3976,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PrefabMeleePowder
       objectReference: {fileID: 0}
+    - target: {fileID: 8798648757202395711, guid: 79e8a750588a3c74a8a64daa7fd9070b, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 79e8a750588a3c74a8a64daa7fd9070b, type: 3}
 --- !u!4 &2017264059 stripped
@@ -3985,6 +3997,10 @@ PrefabInstance:
     - target: {fileID: 1523066240799330044, guid: 748318999c86dff48b513fd6fd6e909e, type: 3}
       propertyPath: m_Name
       value: PrefabSpecialPowder
+      objectReference: {fileID: 0}
+    - target: {fileID: 1523066240799330044, guid: 748318999c86dff48b513fd6fd6e909e, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1523066240799330046, guid: 748318999c86dff48b513fd6fd6e909e, type: 3}
       propertyPath: m_RootOrder
@@ -4080,7 +4096,7 @@ GameObject:
   - component: {fileID: 2109488980}
   - component: {fileID: 2109488982}
   - component: {fileID: 2109488981}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
