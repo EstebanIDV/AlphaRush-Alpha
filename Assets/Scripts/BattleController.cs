@@ -34,6 +34,7 @@ public class BattleController : MonoBehaviour
     
     public void StartBattle(GameObject startingEnemy){
         currEnemy = startingEnemy;
+        
         StartCoroutine(TriggerBattle());
     }
     public static void PlayerWon(int energyWon){
@@ -96,13 +97,13 @@ public class BattleController : MonoBehaviour
 
         }
         SceneManager.SetActiveScene(SceneManager.GetSceneByName("TurnBased"));
-        setEnemy(1, enemyPrefab1);
+        setEnemy(1, currEnemy.GetComponent<BattleDescriptor>().Enemy1);
 
-        if(enemyPrefab2!=null){
-            setEnemy(2, enemyPrefab2);
+        if(currEnemy.GetComponent<BattleDescriptor>().Enemy2!=null){
+            setEnemy(2, currEnemy.GetComponent<BattleDescriptor>().Enemy2);
         }
-        if(enemyPrefab3!=null){
-            setEnemy(3, enemyPrefab2);
+        if(currEnemy.GetComponent<BattleDescriptor>().Enemy3!=null){
+            setEnemy(3, currEnemy.GetComponent<BattleDescriptor>().Enemy3);
         }
 
         
