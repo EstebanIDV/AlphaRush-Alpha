@@ -26,9 +26,6 @@ namespace MenuSkills
 
         public void Pausa()
         {
-            prueba++;
-            //;
-           //Health_Text = FighterStats.health.ToString();
             Time.timeScale = 0f;
             botonPausa.SetActive(false);
             CanvasMenu.SetActive(true);
@@ -36,11 +33,17 @@ namespace MenuSkills
 
         public void Caracteristicas()
         {
-            prueba++;
-            Time.timeScale = 1f;
             botonPausa.SetActive(false);
             CanvasMenu.SetActive(false);
             canvasSkill.SetActive(true);
+        }
+        public void Return()
+        {
+
+            botonPausa.SetActive(true);
+            CanvasMenu.SetActive(false);
+            canvasSkill.SetActive(false);
+            Time.timeScale = 1f;
         }
     }
 }
