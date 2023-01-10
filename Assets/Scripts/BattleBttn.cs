@@ -18,22 +18,35 @@ public class BattleBttn : MonoBehaviour
         
         
         string temp = gameObject.name;
-        Debug.Log(temp);
         gameObject.GetComponent<Button>().onClick.AddListener(()=> AttachCallback(temp, gameObject));
         Hero = GameObject.FindGameObjectWithTag("Hero");
     }
 
-    void turnIndicators(bool indicatorState){
+    void turnOnIndicators(bool indicatorState){
+        GameObject uiPanel = transform.parent.parent.parent.gameObject;
+         
+        Transform currentIndicator =uiPanel.transform.Find("EnemyInfo1/EnemyInfo(Clone)/Indicator");
 
-
+        if(currentIndicator!=null){
+            currentIndicator.gameObject.SetActive(indicatorState);
+        }
+        currentIndicator =uiPanel.transform.Find("EnemyInfo2/EnemyInfo(Clone)/Indicator");
+        if(currentIndicator!=null){
+            currentIndicator.gameObject.SetActive(indicatorState);
+        }
+        currentIndicator =uiPanel.transform.Find("EnemyInfo3/EnemyInfo(Clone)/Indicator");
+        if(currentIndicator!=null){
+            currentIndicator.gameObject.SetActive(indicatorState);
+        }
     }
+
 
     // Update is called once per frame
     private void AttachCallback(string btn, GameObject btnPressed){
         if(attackselected){
              if(btn.CompareTo("MeleeBttn")== 0 || btn.CompareTo("SpecialBttn")== 0){
                 attackselected=false;
-                //hideindicators
+                turnOnIndicators(false);
 
             }
             else if(btn.CompareTo("Indicator")== 0){
@@ -74,12 +87,13 @@ public class BattleBttn : MonoBehaviour
             if(btn.CompareTo("MeleeBttn")== 0){
                 meleeSelected=true;
                 attackselected=true;
+                turnOnIndicators(true);
                 //showindicators
 
             }else if(btn.CompareTo("SpecialBttn")== 0){
                 meleeSelected=false;
                 attackselected=true;
-                //showindicators
+                turnOnIndicators(true);
             }
             else if(btn.CompareTo("Indicator")== 0){
                 switch(btnPressed.transform.parent.parent.gameObject.name){
@@ -105,6 +119,8 @@ public class BattleBttn : MonoBehaviour
                         }
                         break;
                 }
+                turnOnIndicators(true);
+                attackselected=false;
 
             }
             else if(btn.CompareTo("RunBttn")== 0){

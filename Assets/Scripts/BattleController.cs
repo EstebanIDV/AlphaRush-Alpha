@@ -7,11 +7,12 @@ using TMPro;
 
 public class BattleController : MonoBehaviour
 {
-    
+    static GameObject currEnemy;
     public GameObject infoPrefab;
     public GameObject enemyPrefab1;
     public GameObject enemyPrefab2;
     public GameObject enemyPrefab3;
+    public string LosingScene;
     public static bool inBattle;
     // Start is called before the first frame update
     void Start()
@@ -24,8 +25,24 @@ public class BattleController : MonoBehaviour
     {
         
     }
+    public static void turnOffinBattle(){
+        inBattle=false;
+        Debug.Log("PAUSA APAGADA");
+
+    }
+
+    
     public void StartBattle(){
         StartCoroutine(TriggerBattle());
+    }
+    public static void PlayerWon(int energyWon){
+        PlayerController.energy+=energyWon;
+        Destroy(currEnemy);
+    }
+
+    public static void PlayerLost(){
+ /*       SceneManager.LoadScene( LosingScene);
+*/
     }
 
     public void setEnemy(int slot, GameObject newEnemy){
@@ -79,10 +96,10 @@ public class BattleController : MonoBehaviour
         setEnemy(1, enemyPrefab1);
 
         if(enemyPrefab2!=null){
-            setEnemy(1, enemyPrefab1);
+            setEnemy(2, enemyPrefab1);
         }
         if(enemyPrefab3!=null){
-
+            setEnemy(3, enemyPrefab1);
         }
 
         
