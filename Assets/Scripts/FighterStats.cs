@@ -24,7 +24,6 @@ private bool dead = true;
 
     [Header("Stats")]
 
-    public static FighterStats Instance;
     public float health;
     public float energy;
     public float attack;
