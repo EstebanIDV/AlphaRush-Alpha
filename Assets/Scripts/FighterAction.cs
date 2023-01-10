@@ -41,7 +41,6 @@ public class FighterAction : MonoBehaviour
                 break;
             }
         }
-        Debug.Log(enemy.transform.parent.gameObject.name);
 
         GameObject victim = tag == "Hero"? enemy: hero;
 

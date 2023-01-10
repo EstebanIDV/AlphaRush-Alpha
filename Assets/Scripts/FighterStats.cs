@@ -51,7 +51,7 @@ private bool dead = true;
 
     private GameObject GameController;
 
-    void Awake() {
+    void Start() {
         healthTransform=healthFill.GetComponent<RectTransform>();
         healthScale = healthFill.transform.localScale;
 
@@ -72,9 +72,9 @@ private bool dead = true;
             gameObject.tag="Dead";
             Destroy(healthFill);
             Destroy(gameObject);
+            GameController.GetComponent<TurnBasedController>().checkRemainingEnemies();
 
         }else if(damage>0){
-            
             xNewHealthScale= healthScale.x * (health/startHealth);
            
             healthFill.transform.localScale=new Vector2(xNewHealthScale, healthScale.y);
