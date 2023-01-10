@@ -195,9 +195,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 121368670}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01c58d0a9deaf1a4797afde04e8f1283, type: 3}
+  m_Script: {fileID: 11500000, guid: 31aadf695d29ea646bac1cf4e6304479, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  x: -1.604
+  y: -0.498
 --- !u!1 &149281894
 GameObject:
   m_ObjectHideFlags: 0
@@ -313,7 +315,7 @@ GameObject:
   - component: {fileID: 303875823}
   m_Layer: 0
   m_Name: CM vcam1
-  m_TagString: Untagged
+  m_TagString: VRCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -326,7 +328,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 303875820}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.9617258, y: -0.38466898, z: -5.1782255}
+  m_LocalPosition: {x: -1.9997258, y: -0.42266896, z: -5.1782255}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -580,7 +582,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.9617258, y: -0.38466898, z: -5.1782255}
+  m_LocalPosition: {x: -1.9997258, y: -0.42266896, z: -5.1782255}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6862,11 +6864,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8517566803729770474, guid: ed3acbfc0b0886446bde0a9731aebaa5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.566
+      value: -1.604
       objectReference: {fileID: 0}
     - target: {fileID: 8517566803729770474, guid: ed3acbfc0b0886446bde0a9731aebaa5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.46
+      value: -0.498
       objectReference: {fileID: 0}
     - target: {fileID: 8517566803729770474, guid: ed3acbfc0b0886446bde0a9731aebaa5, type: 3}
       propertyPath: m_LocalPosition.z

@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8517566803622795803}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.083, y: -0.167, z: 0}
+  m_LocalPosition: {x: -0.083, y: -0.1455, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -177,7 +177,7 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.01016885, y: -0.07128984}
+  m_Offset: {x: -0.008, y: -0.045}
   serializedVersion: 2
   m_Radius: 0.10014588
 --- !u!114 &8517566803729770478
@@ -199,6 +199,16 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   groundCheckRadius: 0.015
+  health_player: 0
+  energy_player: 0
+  attack_player: 0
+  defense_player: 0
+  special_player: 0
+  speed_player: 0
+  canvasText: {fileID: 0}
+  canvasText_MenuCanvasSkill: {fileID: 0}
+  canDoubleJump: 0
+  avoidError: 0
 --- !u!114 &8517566803729770465
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -250,7 +260,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8517566804417516774}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.09, y: 0.09, z: 0}
+  m_LocalPosition: {x: 0.09, y: 0.1008, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

@@ -9,6 +9,7 @@ TagManager:
   - Dead
   - EnemyBattle
   - Projectile
+  - VRCamera
   layers:
   - Default
   - TransparentFX
