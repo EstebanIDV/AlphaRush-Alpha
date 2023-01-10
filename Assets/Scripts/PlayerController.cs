@@ -28,7 +28,9 @@ public class PlayerController : MonoBehaviour
     // Statistics
     public static PlayerController Instance;
     public float health_player;
+    public float current_health_player;
     public float energy_player;
+    public float current_energy_player;
     public float attack_player;
     public float defense_player;
     public float special_player;
