@@ -38,7 +38,9 @@ public class PlayerController : MonoBehaviour
     private bool _isAttacking;
 
     public TMP_Text canvasText;
-    
+    public TMP_Text canvasText_MenuCanvasSkill;
+
+
     //double jump
     private bool doubleJump;
     public bool canDoubleJump;
@@ -65,14 +67,15 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         canvasText.text = sp.ToString();
+        canvasText_MenuCanvasSkill.text = sp.ToString();
 
     }
 
-    // Update is called once per frame
-    void Update()
+// Update is called once per frame
+void Update()
     {
         canvasText.text = sp.ToString();
-        
+        canvasText_MenuCanvasSkill.text = sp.ToString();
 
 
         float horizontalInput = Input.GetAxisRaw("Horizontal");
