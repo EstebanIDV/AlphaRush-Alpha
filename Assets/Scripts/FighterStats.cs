@@ -20,11 +20,11 @@ private bool dead = true;
     [SerializeField]
 
     public GameObject energyFill;
-    
+
 
     [Header("Stats")]
 
-
+    public static FighterStats Instance;
     public float health;
     public float energy;
     public float attack;
@@ -52,6 +52,17 @@ private bool dead = true;
     private GameObject GameController;
 
     void Awake() {
+        if(FighterStats.Instance == null)
+        {
+            FighterStats.Instance = this;
+            DontDestroyOnLoad(this.gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+
+
         healthTransform=healthFill.GetComponent<RectTransform>();
         healthScale = healthFill.transform.localScale;
 
@@ -62,6 +73,15 @@ private bool dead = true;
         startEnergy=energy;
 
         GameController = GameObject.Find("GameControllerObj");
+
+        
+    }
+    public void aumentar_health(float puntos)
+    {
+        health += puntos;
+       Debug.Log("Player health: " + health);
+       
+
     }
     public void ReceiveDamage(float damage){
         health = health - damage;
