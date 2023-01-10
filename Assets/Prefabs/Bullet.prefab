@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4394578482864396714}
   m_Layer: 0
   m_Name: Bullet
-  m_TagString: Untagged
+  m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -100,6 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
+  shooter: {fileID: 0}
   direction: {x: 0, y: 0}
   livingTime: 2
   initialColor: {r: 0.050980393, g: 0.7176471, b: 0.11372549, a: 1}

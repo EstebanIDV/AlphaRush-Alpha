@@ -8,6 +8,7 @@ TagManager:
   - Hero
   - Dead
   - EnemyBattle
+  - Projectile
   layers:
   - Default
   - TransparentFX

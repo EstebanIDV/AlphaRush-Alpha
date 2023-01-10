@@ -77,9 +77,11 @@ public class TurnBasedController : MonoBehaviour
     public void NextTurn()
     {
         Debug.Log("Checkpoing:   "+fighterStats.Count);
+        /*
         if(fighterStats.Count<=1){
             oneFighterLeft();
         }
+        */
         Debug.Log(fighterStats.Count);
         damageText.gameObject.SetActive(false);
         FighterStats currentFighterStats = fighterStats[0];

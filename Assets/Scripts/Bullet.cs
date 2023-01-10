@@ -6,6 +6,8 @@ public class Bullet : MonoBehaviour
 {
 	public float speed = 2f;
 
+	public GameObject shooter;
+
 	public Vector2 direction;
 
 	public float livingTime = 3f;
@@ -55,7 +57,7 @@ public class Bullet : MonoBehaviour
 		if (collision.CompareTag("Player")) {
 			Destroy(gameObject);
 			// Tell player to get hurt
-			collision.SendMessageUpwards("Damage", 1);
+			//collision.SendMessageUpwards("Damage", 1);
 			Debug.Log("Player hit!!");
 		}
 	}

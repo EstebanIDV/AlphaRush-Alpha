@@ -49,19 +49,9 @@ private bool dead = true;
     private float xNewHealthScale;
     private float xNewEnergyScale;
 
-    private GameObject GameController;
+    public GameObject GameController;
 
-    void Awake() {
-        if(FighterStats.Instance == null)
-        {
-            FighterStats.Instance = this;
-            DontDestroyOnLoad(this.gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-
+    void Start() {
 
         healthTransform=healthFill.GetComponent<RectTransform>();
         healthScale = healthFill.transform.localScale;

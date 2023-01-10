@@ -32,12 +32,15 @@ public class BattleController : MonoBehaviour
     }
 
     
-    public void StartBattle(){
+    public void StartBattle(GameObject startingEnemy){
+        currEnemy = startingEnemy;
         StartCoroutine(TriggerBattle());
     }
     public static void PlayerWon(int energyWon){
+        Debug.Log(currEnemy);
         PlayerController.energy+=energyWon;
         Destroy(currEnemy);
+        Debug.Log(currEnemy);
     }
 
     public static void PlayerLost(){
@@ -65,7 +68,7 @@ public class BattleController : MonoBehaviour
         }
         GameObject Enemy = Instantiate (newEnemy) as GameObject;
         GameObject Info = Instantiate (infoPrefab) as GameObject;
-
+        Debug.Log(Enemy);
         Enemy.transform.SetParent(enemyPosition.transform);
         Enemy.transform.localPosition = Vector3.zero;   
         Enemy.GetComponent<FighterStats>().healthFill = Info.transform.Find("HealthBar/HealthFill").gameObject;
@@ -96,10 +99,10 @@ public class BattleController : MonoBehaviour
         setEnemy(1, enemyPrefab1);
 
         if(enemyPrefab2!=null){
-            setEnemy(2, enemyPrefab1);
+            setEnemy(2, enemyPrefab2);
         }
         if(enemyPrefab3!=null){
-            setEnemy(3, enemyPrefab1);
+            setEnemy(3, enemyPrefab2);
         }
 
         

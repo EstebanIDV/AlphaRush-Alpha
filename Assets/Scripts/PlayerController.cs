@@ -145,6 +145,14 @@ public class PlayerController : MonoBehaviour
         localScaleX = localScaleX * -1f;
         transform.localScale = new Vector3(localScaleX, transform.localScale.y, transform.localScale.z);
     }
-
+    private void OnTriggerEnter2D(Collider2D collision)
+	{
+		if (collision.CompareTag("Projectile")) {
+			
+			GameObject.Find("BattleControllerObj").GetComponent<BattleController>().StartBattle(collision.GetComponent<Bullet>().shooter);
+		}else if(collision.CompareTag("Enemy") && !BattleController.inBattle){
+            GameObject.Find("BattleControllerObj").GetComponent<BattleController>().StartBattle(collision.gameObject);
+        }
+	}
 
 }

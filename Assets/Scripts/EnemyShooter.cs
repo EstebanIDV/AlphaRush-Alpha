@@ -26,8 +26,9 @@ public class EnemyShooter : MonoBehaviour
     {
         if (bullet != null && _firePoint != null && shooter != null) {
 			GameObject myBullet = Instantiate(bullet, _firePoint.position, Quaternion.identity) as GameObject;
-
+			
 			Bullet bulletComponent = myBullet.GetComponent<Bullet>();
+			bulletComponent.shooter = shooter;
 
 			if (shooter.transform.localScale.x < 0f) {
 				// Left
