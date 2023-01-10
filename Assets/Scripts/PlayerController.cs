@@ -139,8 +139,10 @@ void Update()
         //Double Jump
         if (sp >= 1)
         {
-            canvasText.color = new Color(255,115,115,255);
-            canDoubleJump = true;
+            if (!avoidError) {
+                canvasText.color = new Color(255, 115, 115, 255);
+                canDoubleJump = true;
+            }
         }
         
 
