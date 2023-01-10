@@ -45,6 +45,8 @@ public class PlayerController : MonoBehaviour
     private bool doubleJump;
     public bool canDoubleJump;
 
+    public bool avoidError = false;
+
 
     // Start is called before the first frame update
     void Awake()
@@ -66,6 +68,12 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
+        
+        if (canvasText == null || canvasText_MenuCanvasSkill==null) {
+            avoidError = true;
+        }
+
+        if (avoidError) return;
         canvasText.text = sp.ToString();
         canvasText_MenuCanvasSkill.text = sp.ToString();
 
@@ -74,8 +82,11 @@ public class PlayerController : MonoBehaviour
 // Update is called once per frame
 void Update()
     {
-        canvasText.text = sp.ToString();
-        canvasText_MenuCanvasSkill.text = sp.ToString();
+
+        if (!avoidError) {
+            canvasText.text = sp.ToString();
+            canvasText_MenuCanvasSkill.text = sp.ToString();    
+        }
 
 
         float horizontalInput = Input.GetAxisRaw("Horizontal");
@@ -100,13 +111,13 @@ void Update()
             if (_isGrounded == true)
             {
                 _rigibody.AddForce(Vector2.up * jumpforce, ForceMode2D.Impulse);
-                _animator.SetTrigger("Jump");
+                _animator.SetTrigger("jump");
             }
             else if (doubleJump == true)
             {
                 _rigibody.velocity = Vector2.zero;
                 _rigibody.AddForce(Vector2.up * jumpforce, ForceMode2D.Impulse);
-                _animator.SetTrigger("Jump");
+                _animator.SetTrigger("jump");
                 doubleJump = false;
                 energy--;
             }
