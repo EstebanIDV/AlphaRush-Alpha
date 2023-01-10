@@ -25,6 +25,16 @@ public class PlayerController : MonoBehaviour
     public static int energy;
     public static int sp; //Skill Poins
 
+    // Statistics
+    public static PlayerController Instance;
+    public float health_player;
+    public float energy_player;
+    public float attack_player;
+    public float defense_player;
+    public float special_player;
+    public float speed_player;
+
+
     private bool _isAttacking;
 
     public TMP_Text canvasText;
@@ -37,6 +47,15 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
+        if (PlayerController.Instance == null)
+        {
+            PlayerController.Instance = this;
+            DontDestroyOnLoad(this.gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
         sp = 0;
         energy = 0;
         _rigibody = GetComponent<Rigidbody2D>();
