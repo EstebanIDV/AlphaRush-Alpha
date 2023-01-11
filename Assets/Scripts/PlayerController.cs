@@ -58,8 +58,8 @@ public class PlayerController : MonoBehaviour
         energy_player=25f;
         current_energy_player=25f;
         attack_player=10f;
-        defense_player=10f;
-        special_player=0.5f;
+        defense_player=0.2f;
+        special_player=6f;
         speed_player=15f;
 
         if (PlayerController.Instance == null)

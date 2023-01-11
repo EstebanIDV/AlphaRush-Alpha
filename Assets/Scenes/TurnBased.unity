@@ -575,7 +575,14 @@ MonoBehaviour:
   special: 20
   speed: 30
   experience: 0
+  startHealth: 0
+  startEnergy: 0
   nextActTurn: 0
+  healthTransform: {fileID: 0}
+  energyTransform: {fileID: 0}
+  healthScale: {x: 0, y: 0}
+  energyScale: {x: 0, y: 0}
+  GameController: {fileID: 0}
 --- !u!1 &342255161
 GameObject:
   m_ObjectHideFlags: 0
@@ -1128,11 +1135,11 @@ PrefabInstance:
       objectReference: {fileID: 198596375}
     - target: {fileID: 8798648757202395708, guid: 79e8a750588a3c74a8a64daa7fd9070b, type: 3}
       propertyPath: maxAttackMultiplier
-      value: 0.3
+      value: 1.1
       objectReference: {fileID: 0}
     - target: {fileID: 8798648757202395708, guid: 79e8a750588a3c74a8a64daa7fd9070b, type: 3}
       propertyPath: minAttackMultiplier
-      value: 1.1
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 8798648757202395708, guid: 79e8a750588a3c74a8a64daa7fd9070b, type: 3}
       propertyPath: maxDefenseMultiplier
@@ -2710,6 +2717,10 @@ PrefabInstance:
       propertyPath: owner
       value: 
       objectReference: {fileID: 198596375}
+    - target: {fileID: 1523066240799330047, guid: 748318999c86dff48b513fd6fd6e909e, type: 3}
+      propertyPath: specialCost
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 1523066240799330047, guid: 748318999c86dff48b513fd6fd6e909e, type: 3}
       propertyPath: animationName
       value: bikerspecial

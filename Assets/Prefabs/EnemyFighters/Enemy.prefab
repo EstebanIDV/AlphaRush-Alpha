@@ -144,7 +144,7 @@ MonoBehaviour:
   energy: 10
   attack: 5
   defense: 5
-  special: 0.5
+  special: 1
   speed: 10
   experience: 0
   startHealth: 0
