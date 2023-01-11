@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -154,7 +155,12 @@ void Update()
                 canDoubleJump = true;
             }
         }
-        
+
+        if (!(transform.position.y < -15)) return;
+        Instance.current_health_player= Instance.health_player;
+        Instance.current_energy_player = Instance.energy_player;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
 
     }
     void FixedUpdate()

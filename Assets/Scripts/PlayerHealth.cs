@@ -25,10 +25,6 @@ public class PlayerHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(transform.position.y<-8){
-            health=0;
-            LoadScene(SceneManager.GetActiveScene().name);
-        }
     }
     public void Damage(int amount){
         health=health-1;
