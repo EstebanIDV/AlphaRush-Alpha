@@ -12720,6 +12720,10 @@ PrefabInstance:
       propertyPath: canvasText
       value: 
       objectReference: {fileID: 282966667}
+    - target: {fileID: 8517566803729770478, guid: ed3acbfc0b0886446bde0a9731aebaa5, type: 3}
+      propertyPath: canvasText_MenuCanvasSkill
+      value: 
+      objectReference: {fileID: 990098383}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ed3acbfc0b0886446bde0a9731aebaa5, type: 3}
 --- !u!1 &1680159958

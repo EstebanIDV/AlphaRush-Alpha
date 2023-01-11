@@ -703,11 +703,11 @@ PrefabInstance:
     - target: {fileID: 8517566803729770478, guid: ed3acbfc0b0886446bde0a9731aebaa5, type: 3}
       propertyPath: canvasText
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1699575697}
     - target: {fileID: 8517566803729770478, guid: ed3acbfc0b0886446bde0a9731aebaa5, type: 3}
       propertyPath: canvasText_MenuCanvasSkill
       value: 
-      objectReference: {fileID: 1903253076}
+      objectReference: {fileID: 828334155}
     - target: {fileID: 8517566803729770479, guid: ed3acbfc0b0886446bde0a9731aebaa5, type: 3}
       propertyPath: m_IsTrigger
       value: 0
@@ -1482,7 +1482,7 @@ MonoBehaviour:
   botonPausa: {fileID: 1355934977}
   CanvasMenu: {fileID: 353991277}
   canvasSkill: {fileID: 1248289929}
-  canvasText_SP: {fileID: 828334155}
+  canvasText_SP: {fileID: 1699575697}
 --- !u!114 &449776813
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6944,7 +6944,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e3d10a3a0f7a994596dc18f1eb94786, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  botonPausa: {fileID: 0}
+  botonPausa: {fileID: 1355934977}
   CanvasMenu: {fileID: 353991277}
   canvasSkill: {fileID: 1248289929}
   canvasText: {fileID: 828334155}
@@ -8968,7 +8968,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 449776812}
         m_TargetAssemblyTypeName: MenuSkills.MenuPausa, Assembly-CSharp
         m_MethodName: Return
         m_Mode: 1
