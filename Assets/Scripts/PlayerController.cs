@@ -53,14 +53,14 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        health_player=30f;
+        health_player=30f; // de 5 en 5
         current_health_player=30f;
-        energy_player=25f;
+        energy_player=25f; // de 5 en 5
         current_energy_player=25f;
-        attack_player=10f;
-        defense_player=0.2f;
-        special_player=6f;
-        speed_player=15f;
+        attack_player=10f; // de 3 en 3
+        defense_player=0.2f; // de 0.2 en 0.2
+        special_player=6f; // de 4 en 4
+        speed_player=15f; // de 3 en 3
 
         if (PlayerController.Instance == null)
         {
