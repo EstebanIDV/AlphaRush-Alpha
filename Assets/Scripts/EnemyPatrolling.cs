@@ -5,8 +5,7 @@ public class EnemyPatrolling : MonoBehaviour
 {
 
     public float speed = 1f;
-    public LayerMask groundLayer;
-	public float minX;
+    public float minX;
 	public float maxX;
 	public float waitingTime = 2f;
 	public float aimingTime = 0.5f;
@@ -26,9 +25,11 @@ public class EnemyPatrolling : MonoBehaviour
         _animator = GetComponent<Animator>();
         _rigidbody = GetComponent<Rigidbody2D>();
     }
-    void Start()
-    {
-        UpdateTarget();
+    void Start() {
+	    var localPosition = transform.localPosition;
+	    minX = localPosition.x - minX;
+	    maxX = localPosition.x + maxX;
+	    UpdateTarget();
 		StartCoroutine("PatrolToTarget");
     }
 
@@ -41,22 +42,22 @@ public class EnemyPatrolling : MonoBehaviour
     private void UpdateTarget()
 	{
 		// If first time, create target in the left
-		if (_target  == null) {
+		if (_target == null) {
 			_target = new GameObject("Target");
-			_target.transform.position = new Vector2(minX, transform.position.y);
+			_target.transform.localPosition = new Vector2(minX, transform.localPosition.y);
 			transform.localScale = new Vector3(-1, 1, 1);
 			return;
 		}
 
 		// If we are in the left, change target to the right
-		if (_target.transform.position.x == minX) {
-			_target.transform.position = new Vector2(maxX, transform.position.y);
+		if (_target.transform.localPosition.x == minX) {
+			_target.transform.localPosition = new Vector2(maxX, transform.localPosition.y);
 			transform.localScale = new Vector3(1, 1, 1);
 		}
 
 		// If we are in the right, change target to the left
-		else if (_target.transform.position.x == maxX) {
-			_target.transform.position = new Vector2(minX, transform.position.y);
+		else if (_target.transform.localPosition.x == maxX) {
+			_target.transform.localPosition = new Vector2(minX, transform.localPosition.y);
 			transform.localScale = new Vector3(-1, 1, 1);
 		}
 	}
@@ -64,7 +65,7 @@ public class EnemyPatrolling : MonoBehaviour
 	private IEnumerator PatrolToTarget()
 	{
 		// Coroutine to move the enemy
-		while(Vector2.Distance(transform.position, _target.transform.position) > 0.05f) {
+		while(Vector2.Distance(transform.localPosition, _target.transform.localPosition) > 0.05f) {
 			// let's move to the target
 			//if(!BattleController.inBattle){
 				if(_isAttacking==true){
@@ -72,7 +73,7 @@ public class EnemyPatrolling : MonoBehaviour
 	
 				}
 				_animator.SetBool("Walking",true);
-				Vector2 direction = _target.transform.position - transform.position;
+				Vector2 direction = _target.transform.localPosition - transform.localPosition;
 				float xDirection = direction.x;
 
 				transform.Translate(direction.normalized * speed * Time.deltaTime);
@@ -85,8 +86,8 @@ public class EnemyPatrolling : MonoBehaviour
 
 
 		// At this point, i've reached the target, let's set our position to the target's one
-        if(Vector2.Distance(transform.position, _target.transform.position) <= 0.05f){
-            transform.position = new Vector2(_target.transform.position.x, transform.position.y);
+        if(Vector2.Distance(transform.localPosition, _target.transform.localPosition) <= 0.05f){
+            transform.localPosition = new Vector2(_target.transform.localPosition.x, transform.localPosition.y);
             UpdateTarget();
         }
 		
