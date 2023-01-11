@@ -172,13 +172,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.5
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 0
-  minX: 0.9
-  maxX: 1.95
+  minX: 1
+  maxX: 1
   waitingTime: 2
-  playerAware: 3
   aimingTime: 0.5
   shootingTime: 1.5
 --- !u!50 &6254167361509416881
@@ -257,7 +253,7 @@ GameObject:
   - component: {fileID: 6254167362077583638}
   m_Layer: 7
   m_Name: hurt
-  m_TagString: Enemy
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -284,7 +280,7 @@ CapsuleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6254167362077583624}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1

@@ -34,14 +34,13 @@ public class BattleController : MonoBehaviour
     
     public void StartBattle(GameObject startingEnemy){
         currEnemy = startingEnemy;
-        
         StartCoroutine(TriggerBattle());
     }
     public static void PlayerWon(int energyWon){
 
         PlayerController.energy+=energyWon;
         Destroy(currEnemy);
-        
+
 
     }
 
@@ -70,7 +69,6 @@ public class BattleController : MonoBehaviour
         }
         GameObject Enemy = Instantiate (newEnemy) as GameObject;
         GameObject Info = Instantiate (infoPrefab) as GameObject;
-        Debug.Log(Enemy);
         Enemy.transform.SetParent(enemyPosition.transform);
         Enemy.transform.localPosition = Vector3.zero;   
         Enemy.GetComponent<FighterStats>().healthFill = Info.transform.Find("HealthBar/HealthFill").gameObject;
@@ -115,7 +113,7 @@ public class BattleController : MonoBehaviour
     }
 
     public IEnumerator TriggerBattle(){
-        inBattle=true;
+        
         Scene originalScene = SceneManager.GetActiveScene();
         AsyncOperation sceneLoad = SceneManager.LoadSceneAsync("TurnBased", LoadSceneMode.Additive);
         while (!sceneLoad.isDone)
