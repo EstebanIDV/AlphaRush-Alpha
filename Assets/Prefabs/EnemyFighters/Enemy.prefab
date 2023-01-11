@@ -140,14 +140,21 @@ MonoBehaviour:
   healthFill: {fileID: 0}
   fighterName: Powder
   energyFill: {fileID: 0}
-  health: 50
-  energy: 20
+  health: 15
+  energy: 10
   attack: 5
   defense: 5
   special: 0.5
-  speed: 30
+  speed: 10
   experience: 0
+  startHealth: 0
+  startEnergy: 0
   nextActTurn: 0
+  healthTransform: {fileID: 0}
+  energyTransform: {fileID: 0}
+  healthScale: {x: 0, y: 0}
+  energyScale: {x: 0, y: 0}
+  GameController: {fileID: 0}
 --- !u!1001 &1300611151253251510
 PrefabInstance:
   m_ObjectHideFlags: 0

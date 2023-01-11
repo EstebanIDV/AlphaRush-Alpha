@@ -7,6 +7,9 @@ using TMPro;
 
 public class TurnBasedController : MonoBehaviour
 {
+    public static bool attackselected;
+    
+    public static bool meleeselected;
     private List<FighterStats> fighterStats;
     private int energyGained=0;
     
@@ -61,8 +64,15 @@ public class TurnBasedController : MonoBehaviour
     }
 
     public void checkRemainingEnemies(){
+
+        
+
+
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("EnemyBattle");
         if(enemies.Length<=0){
+            GameObject startingPlayer = GameObject.FindGameObjectWithTag("Hero");
+            PlayerController.Instance.current_health_player =startingPlayer.GetComponent<FighterStats>().health;
+            PlayerController.Instance.current_energy_player =startingPlayer.GetComponent<FighterStats>().energy;
             BattleController.inBattle=false;
             SceneManager.UnloadSceneAsync("TurnBased");
             BattleController.PlayerWon(energyGained);

@@ -33,17 +33,17 @@ private bool dead = true;
     public float experience;
 
 
-    private float startHealth;
-    private float startEnergy;
+    public float startHealth;
+    public float startEnergy;
     
     [HideInInspector]
     public int nextActTurn;
     //Resize bars
-    private Transform healthTransform;
-    private Transform energyTransform;
+    public Transform healthTransform;
+    public Transform energyTransform;
 
-    private Vector2 healthScale;
-    private Vector2 energyScale;
+    public Vector2 healthScale;
+    public Vector2 energyScale;
 
     private float xNewHealthScale;
     private float xNewEnergyScale;

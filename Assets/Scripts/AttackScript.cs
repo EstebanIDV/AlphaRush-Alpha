@@ -46,6 +46,7 @@ public class AttackScript : MonoBehaviour
             if(specialAttack){
                 damage=multiplier*attackerStats.special;  
             }
+            Debug.Log(specialCost+ "SPECIALLL");
             float defenseMultiplier = Random.Range(minDefenseMultiplier, maxDefenseMultiplier);
             damage = Mathf.Max(0,damage-(defenseMultiplier*targetStats.defense));
             owner.GetComponent<Animator>().Play(animationName);

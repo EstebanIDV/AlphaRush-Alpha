@@ -38,10 +38,11 @@ public class BattleController : MonoBehaviour
         StartCoroutine(TriggerBattle());
     }
     public static void PlayerWon(int energyWon){
-        Debug.Log(currEnemy);
+
         PlayerController.energy+=energyWon;
         Destroy(currEnemy);
-        Debug.Log(currEnemy);
+        
+
     }
 
     public static void PlayerLost(){
@@ -85,7 +86,33 @@ public class BattleController : MonoBehaviour
         
 
     }
+    private void setPlayerStats(){
+        GameObject startingPlayer = GameObject.FindGameObjectWithTag("Hero");
+        startingPlayer.GetComponent<FighterStats>().attack = PlayerController.Instance.attack_player;
+        startingPlayer.GetComponent<FighterStats>().defense = PlayerController.Instance.defense_player;
+        startingPlayer.GetComponent<FighterStats>().speed = PlayerController.Instance.speed_player;
+        startingPlayer.GetComponent<FighterStats>().special = PlayerController.Instance.special_player;
+        startingPlayer.GetComponent<FighterStats>().defense = PlayerController.Instance.defense_player;
+        startingPlayer.GetComponent<FighterStats>().startHealth = PlayerController.Instance.health_player;
+        startingPlayer.GetComponent<FighterStats>().startEnergy = PlayerController.Instance.energy_player;
+        startingPlayer.GetComponent<FighterStats>().health = PlayerController.Instance.current_health_player;
+        startingPlayer.GetComponent<FighterStats>().energy = PlayerController.Instance.current_energy_player;
 
+
+        Transform healthTransform=startingPlayer.GetComponent<FighterStats>().healthFill.GetComponent<RectTransform>();
+        Vector2 healthScale = healthTransform.localScale;
+
+        Transform energyTransform = startingPlayer.GetComponent<FighterStats>().energyFill.GetComponent<RectTransform>();
+        Vector2 energyScale = energyTransform.localScale;
+
+        float xNewHealthScale= healthScale.x * (PlayerController.Instance.current_health_player/PlayerController.Instance.health_player);
+           
+        healthTransform.localScale=new Vector2(xNewHealthScale, healthScale.y);
+
+
+        float xNewEnergyScale=energyScale.x*(PlayerController.Instance.current_energy_player/PlayerController.Instance.energy_player);
+        energyTransform.localScale=new Vector2(xNewEnergyScale,energyScale.y);
+    }
 
     public IEnumerator TriggerBattle(){
         inBattle=true;
@@ -105,7 +132,8 @@ public class BattleController : MonoBehaviour
         if(currEnemy.GetComponent<BattleDescriptor>().Enemy3!=null){
             setEnemy(3, currEnemy.GetComponent<BattleDescriptor>().Enemy3);
         }
-
+        
+        setPlayerStats();
         
         SceneManager.SetActiveScene(originalScene);
         
