@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyPatrolling : MonoBehaviour
@@ -10,8 +9,7 @@ public class EnemyPatrolling : MonoBehaviour
 	public float minX;
 	public float maxX;
 	public float waitingTime = 2f;
-    public float playerAware = 3f;
-    public float aimingTime = 0.5f;
+	public float aimingTime = 0.5f;
 	public float shootingTime = 1.5f;
 
     private Rigidbody2D _rigidbody;

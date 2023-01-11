@@ -20,8 +20,7 @@ public class PlayerController : MonoBehaviour
     private Vector2 _movement;
     private bool _facingRight = true;
     private bool _isGrounded = true;
-
-    public static int hp;
+    
     public static int energy;
     public static int sp; //Skill Poins
 
