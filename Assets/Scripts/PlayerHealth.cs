@@ -27,7 +27,7 @@ public class PlayerHealth : MonoBehaviour
     {
         if(transform.position.y<-8){
             health=0;
-            LoadScene("Lost");
+            LoadScene(SceneManager.GetActiveScene().name);
         }
     }
     public void Damage(int amount){

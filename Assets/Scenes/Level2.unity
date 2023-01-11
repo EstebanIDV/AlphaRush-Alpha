@@ -2545,6 +2545,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 181644257}
     m_Modifications:
+    - target: {fileID: 3792438325761396072, guid: 6210ca5756e76374ea2206051403f4bb, type: 3}
+      propertyPath: Enemy2
+      value: 
+      objectReference: {fileID: 1300611151085103345, guid: a46e9a83143f2ac45902d90cc6d39fe8, type: 3}
     - target: {fileID: 6254167361509416872, guid: 6210ca5756e76374ea2206051403f4bb, type: 3}
       propertyPath: m_Name
       value: Enemy
@@ -7078,6 +7082,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 181644257}
     m_Modifications:
+    - target: {fileID: 3792438325761396072, guid: 6210ca5756e76374ea2206051403f4bb, type: 3}
+      propertyPath: Enemy3
+      value: 
+      objectReference: {fileID: 1300611151085103345, guid: a46e9a83143f2ac45902d90cc6d39fe8, type: 3}
     - target: {fileID: 6254167361509416872, guid: 6210ca5756e76374ea2206051403f4bb, type: 3}
       propertyPath: m_Name
       value: Enemy (1)
@@ -8157,7 +8165,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Recover the supplies in the next building
+  m_text: Reach the end of the dump
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 782705ed25c9594488bf736f7c13fec8, type: 2}
   m_sharedMaterial: {fileID: -4596356764252748390, guid: 782705ed25c9594488bf736f7c13fec8, type: 2}
