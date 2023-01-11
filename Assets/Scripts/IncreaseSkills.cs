@@ -14,7 +14,7 @@ public class IncreaseSkills : MonoBehaviour
     public void increase_Health()
     {
         if(PlayerController.sp > 0){
-            PlayerController.Instance.health_player += 20;
+            PlayerController.Instance.health_player += 5f;
             PlayerController.Instance.current_health_player = PlayerController.Instance.health_player;
             PlayerController.sp -= 1;
         }
@@ -24,7 +24,7 @@ public class IncreaseSkills : MonoBehaviour
     {
         if (PlayerController.sp > 0)
         {
-            PlayerController.Instance.energy_player += 20;
+            PlayerController.Instance.energy_player += 5f;
             PlayerController.Instance.current_energy_player =  PlayerController.Instance.energy_player;
             PlayerController.sp -= 1;
         }
@@ -34,7 +34,7 @@ public class IncreaseSkills : MonoBehaviour
     {
         if (PlayerController.sp > 0)
         {
-            PlayerController.Instance.attack_player += 20;
+            PlayerController.Instance.attack_player += 3f;
             PlayerController.sp -= 1;
         }
         canvasText.text = PlayerController.sp.ToString();
@@ -44,7 +44,7 @@ public class IncreaseSkills : MonoBehaviour
     {
         if (PlayerController.sp > 0)
         {
-            PlayerController.Instance.defense_player += 20;
+            PlayerController.Instance.defense_player += 0.2f;
             PlayerController.sp -= 1;
         }
 
@@ -54,7 +54,7 @@ public class IncreaseSkills : MonoBehaviour
     {
         if (PlayerController.sp > 0)
         {
-            PlayerController.Instance.special_player += 20;
+            PlayerController.Instance.special_player += 4f;
             PlayerController.sp -= 1;
         }
         canvasText.text = PlayerController.sp.ToString();
@@ -64,7 +64,7 @@ public class IncreaseSkills : MonoBehaviour
     {
          if (PlayerController.sp > 0)
             {
-             PlayerController.Instance.speed_player += 20;
+             PlayerController.Instance.speed_player += 3f;
              PlayerController.sp -= 1;
             }
             canvasText.text = PlayerController.sp.ToString();
