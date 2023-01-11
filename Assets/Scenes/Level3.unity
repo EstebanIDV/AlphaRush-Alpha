@@ -555,6 +555,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 426573803336264201, guid: 808cb7b78f057534c92ed066de6a5a9d, type: 3}
+      propertyPath: battle_bg
+      value: 
+      objectReference: {fileID: 1852718374010011799, guid: e2650a1dff95b4c47b261abacde10737, type: 3}
+    - target: {fileID: 426573803336264201, guid: 808cb7b78f057534c92ed066de6a5a9d, type: 3}
+      propertyPath: floor_sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c6222f12eb7f2c14688feb9e825aea4b, type: 3}
     - target: {fileID: 426573803336264202, guid: 808cb7b78f057534c92ed066de6a5a9d, type: 3}
       propertyPath: m_RootOrder
       value: 12

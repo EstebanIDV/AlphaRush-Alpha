@@ -192,10 +192,11 @@ void Update()
     }
     private void OnTriggerEnter2D(Collider2D collision)
 	{
-		if (collision.CompareTag("Projectile")) {
-			
+		if (collision.CompareTag("Projectile")&& !BattleController.inBattle) {
+			BattleController.inBattle=true;
 			GameObject.Find("BattleControllerObj").GetComponent<BattleController>().StartBattle(collision.GetComponent<Bullet>().shooter);
 		}else if(collision.CompareTag("Enemy") && !BattleController.inBattle){
+            BattleController.inBattle=true;
             GameObject.Find("BattleControllerObj").GetComponent<BattleController>().StartBattle(collision.gameObject);
         }
 	}

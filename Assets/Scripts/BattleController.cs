@@ -8,6 +8,8 @@ using TMPro;
 public class BattleController : MonoBehaviour
 {
     static GameObject currEnemy;
+    public GameObject battle_bg;
+    public Sprite floor_sprite;
     public GameObject infoPrefab;
     public GameObject enemyPrefab1;
     public GameObject enemyPrefab2;
@@ -34,14 +36,13 @@ public class BattleController : MonoBehaviour
     
     public void StartBattle(GameObject startingEnemy){
         currEnemy = startingEnemy;
-        
         StartCoroutine(TriggerBattle());
     }
     public static void PlayerWon(int energyWon){
 
         PlayerController.energy+=energyWon;
         Destroy(currEnemy);
-        
+
 
     }
 
@@ -70,7 +71,6 @@ public class BattleController : MonoBehaviour
         }
         GameObject Enemy = Instantiate (newEnemy) as GameObject;
         GameObject Info = Instantiate (infoPrefab) as GameObject;
-        Debug.Log(Enemy);
         Enemy.transform.SetParent(enemyPosition.transform);
         Enemy.transform.localPosition = Vector3.zero;   
         Enemy.GetComponent<FighterStats>().healthFill = Info.transform.Find("HealthBar/HealthFill").gameObject;
@@ -113,9 +113,19 @@ public class BattleController : MonoBehaviour
         float xNewEnergyScale=energyScale.x*(PlayerController.Instance.current_energy_player/PlayerController.Instance.energy_player);
         energyTransform.localScale=new Vector2(xNewEnergyScale,energyScale.y);
     }
+    private void setScene(){
+        GameObject.Find("Tile1").GetComponent<SpriteRenderer>().sprite = floor_sprite;
+        GameObject.Find("Tile2").GetComponent<SpriteRenderer>().sprite = floor_sprite;
+        GameObject BG = Instantiate (battle_bg) as GameObject;
+        BG.transform.SetParent(GameObject.Find("Background_Battles").transform);
+        BG.transform.localPosition = Vector3.zero;   
+        BG.transform.localScale = new Vector3(1f,1f,1f); 
+
+    }
+
 
     public IEnumerator TriggerBattle(){
-        inBattle=true;
+        
         Scene originalScene = SceneManager.GetActiveScene();
         AsyncOperation sceneLoad = SceneManager.LoadSceneAsync("TurnBased", LoadSceneMode.Additive);
         while (!sceneLoad.isDone)
@@ -134,6 +144,7 @@ public class BattleController : MonoBehaviour
         }
         
         setPlayerStats();
+        setScene();
         
         SceneManager.SetActiveScene(originalScene);
         
